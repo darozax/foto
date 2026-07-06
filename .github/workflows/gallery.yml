@@ -5,17 +5,34 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
-  test:
+  gallery:
     runs-on: ubuntu-latest
 
     steps:
+
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Test
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install Pillow
         run: |
-          echo "=================================="
-          echo "GitHub Actions działa poprawnie!"
-          echo "=================================="
-          ls -la
+          pip install pillow
+
+      - name: Check folders
+        run: |
+          mkdir -p images/full
+          mkdir -p images/thumbs
+          mkdir -p NOWE
+          echo "Struktura gotowa"
+
+      - name: Test image processing
+        run: |
+          echo "Generator galerii startuje..."
