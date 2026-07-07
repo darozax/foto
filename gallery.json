@@ -21,5 +21,10 @@
     "file": "banner.jpg",
     "thumb": "banner.webp",
     "title": "banner"
+  },
+  {
+    "file": "test.jpg",
+    "thumb": "test.webp",
+    "title": "test"
   }
 ]
