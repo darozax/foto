@@ -1,1 +1,7 @@
-[]
+[
+  {
+    "file": "test.jpg",
+    "thumb": "test.webp",
+    "title": "test"
+  }
+]
