@@ -6,7 +6,7 @@ SOURCE = "NOWE"
 FULL = "images/full"
 THUMBS = "images/thumbs"
 
-THUMB_SIZE = (400, 400)
+THUMB_SIZE = (600, 400)
 
 EXTENSIONS = (
     ".jpg",
@@ -90,9 +90,7 @@ def process_images():
 
             thumb = img.copy()
 
-            thumb.thumbnail(
-                THUMB_SIZE
-            )
+            thumb.thumbnail(THUMB_SIZE)
 
             thumb.save(
                 thumb_file,
