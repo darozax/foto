@@ -1,32 +1,52 @@
 fetch("gallery.json")
 
-.then(response=>response.json())
+.then(response => response.json())
 
-.then(data=>{
+.then(images => {
 
-const gallery=document.getElementById("gallery");
 
-data.forEach(photo=>{
+const gallery =
+document.getElementById("gallery");
 
-const div=document.createElement("div");
 
-div.className="photo";
 
-div.innerHTML=`
+images.forEach(photo=>{
 
-<img
-loading="lazy"
-src="images/thumbs/${photo.file}"
-data-full="images/full/${photo.file}"
-alt="${photo.title}"
->
+
+let div =
+document.createElement("div");
+
+
+div.className="card";
+
+
+
+div.innerHTML = `
+
+<img src="images/thumbs/${photo.thumb}"
+alt="${photo.title}">
 
 <p>${photo.title}</p>
 
 `;
 
+
+
+div.onclick=function(){
+
+openLightbox(
+"images/full/"+photo.file
+);
+
+};
+
+
+
 gallery.appendChild(div);
 
+
+
 });
+
 
 });
