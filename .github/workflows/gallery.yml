@@ -36,3 +36,15 @@ jobs:
       - name: Test image processing
         run: |
           echo "Generator galerii startuje..."
+          
+      - name: Build gallery
+        run: |
+          python tools/gallery_builder.py
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add .
+          git commit -m "Auto generate gallery" || echo "No changes"
+          git push
