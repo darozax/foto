@@ -32,11 +32,12 @@ alt="${photo.title}">
 
 
 
-div.onclick=function(){
+div.onclick = function(){
 
-openLightbox(
-"images/full/"+photo.file
-);
+    const img =
+    "images/full/" + photo.file;
+
+    openLightbox(img);
 
 };
 
